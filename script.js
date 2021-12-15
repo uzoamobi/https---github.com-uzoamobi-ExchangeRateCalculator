@@ -12,7 +12,7 @@ function calculate() {
   fetch(`http://api.exchangeratesapi.io/v1/latest?access_key=52e826dca748dc3fa1c830168d86d8d7${currency_one}`)
     .then(res => res.json())
     .then(data => {
-      //  console.log(data);
+      console.log(data);
       const rate = data.rates[currency_two];
       rateEl.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
       amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
